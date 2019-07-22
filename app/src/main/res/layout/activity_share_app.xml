@@ -1,93 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@drawable/back"
     tools:context=".ShareApp">
-
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:src="@drawable/image" />
-
-    <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="30dp"
-        >
+        android:src="@drawable/login_bg_gradient"
+        android:scaleType="centerCrop" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:id="@+id/start"
-            android:background="@color/blue"
-            android:layout_height="wrap_content"
-            style="@style/AppTheme.RoundedCornerMaterialButton"
-            android:layout_gravity="center"
-            android:text="START"
-            android:textColor="@color/black"
-            android:layout_margin="30dp"/>
-
-
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/login_screen_content_offset_center_top"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SHARE THIS APP ON"
-            android:gravity="center"
-            android:layout_margin="30dp"/>
+            android:layout_marginBottom="@dimen/login_screen_title_margin"
+            android:text="Share App on"
+            style="@style/TextAppearance.MainTitle" />
 
-        <android.support.v7.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+        <RelativeLayout
+            android:id="@+id/facebookSignInButton"
+            android:layout_width="@dimen/base_login_button_width"
+            android:layout_height="@dimen/base_login_button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/login_screen_button_margin"
+            android:background="@drawable/facebook_button_bg"
+            android:elevation="4dp">
 
-            <Button
-                style="@style/AppTheme.RoundedCornerMaterialButton"
-                android:id="@+id/whatsaap"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/rounde_shape"
-                android:drawableTop="@drawable/whatsapp"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="5dp"
-                android:textColor="#e8e9e9" />
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/large_intrinsic_padding"
+                android:paddingRight="@dimen/large_intrinsic_padding"
+                app:srcCompat="@drawable/ic_bt_login_facebook" />
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/rounde_shape"
-                android:drawableTop="@drawable/fb"
-                android:paddingBottom="5dp"
-                android:paddingLeft="14dp"
-                android:paddingRight="16dp"
-                android:paddingTop="8dp"
-                android:textColor="#e8e9e9" />
+                android:layout_centerInParent="true"
+                android:text="button_login_with_facebook"
+                android:textColor="@drawable/login_button_text_selector" />
 
-            <Button
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/googleSignInButton"
+            android:layout_width="@dimen/base_login_button_width"
+            android:layout_height="@dimen/base_login_button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/login_screen_button_margin"
+            android:background="@drawable/google_button_bg"
+            android:elevation="4dp">
+
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounde_shape"
-                android:drawableTop="@drawable/insta"
-                android:paddingBottom="5dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="8dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="8dp"
-                android:textColor="#e8e9e9" />
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/large_intrinsic_padding"
+                android:paddingRight="@dimen/large_intrinsic_padding"
+                app:srcCompat="@drawable/ic_bt_login_google" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="button_login_with_google"
+                android:textColor="@drawable/login_button_text_selector" />
 
-        </android.support.v7.widget.LinearLayoutCompat>
-    </android.support.v7.widget.LinearLayoutCompat>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
 
-</LinearLayout>
